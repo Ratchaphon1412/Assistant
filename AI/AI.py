@@ -1,4 +1,4 @@
-from curses.ascii import NL
+
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
 from  Knowledge.geolocation import Geolocation
