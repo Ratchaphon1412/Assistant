@@ -1,13 +1,16 @@
+from curses.ascii import NL
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
 from  Knowledge.geolocation import Geolocation
 from Knowledge.weather import Weather
+from Knowledge.nlg  import Nlg
 class AI:
     def __init__(self):
         self.speechTT = SpeechTT()
         self.textTTS = textTTS()
         self.geoLocation = Geolocation()
         self.weather = Weather()
+        self.nlg = Nlg()
 
 
     def mainAI(self):
@@ -25,7 +28,9 @@ class AI:
                     if(text in "สภาพอากาศเป็นยังไง"):
                         lat,long = self.geoLocation.getGeoLocation()
                         des,temp = self.weather.weatherCurrent(lat,long)
-                        
+                        text  = self.nlg.answerWeather(des,temp)
+                        self.textTTS.changetextTV(text)
+
             except:
                 break
         
