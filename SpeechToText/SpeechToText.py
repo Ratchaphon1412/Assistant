@@ -7,6 +7,7 @@ class SpeechTT:
     def startListen(self):
         # obtain audio from the microphone
         r = sr.Recognizer()
+        r.energy_threshold = 4000
         with sr.Microphone() as microphone:
             print("Say something!")
             audio = r.listen(microphone)

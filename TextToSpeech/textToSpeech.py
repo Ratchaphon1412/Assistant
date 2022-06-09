@@ -1,5 +1,6 @@
 from gtts import gTTS
 from playsound import playsound
+import requests
 import os
 
 class textTTS:
