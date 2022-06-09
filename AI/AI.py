@@ -30,7 +30,7 @@ class AI:
                         des,temp = self.weather.weatherCurrent(lat,long)
                         text  = self.nlg.answerWeather(des,temp)
                         self.textTTS.changetextTV(text)
-
+                        # test branch
             except:
                 break
         
