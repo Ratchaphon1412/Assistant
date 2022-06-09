@@ -1,3 +1,4 @@
+from email.mime import audio
 from SpeechToText.speechToText import SpeechTT
 
 class AI:
@@ -13,8 +14,12 @@ class AI:
             
             try:
                 
-                text =  self.speechTT.startListen()
+                audio,recognition = self.speechTT.startListen()
+                text = self.speechTT.changevoiceTT(audio,recognition)
+                if text != None:
+                    pass
                 print(text)
+
             except:
-                return  
+                break
         
