@@ -28,7 +28,7 @@ class textTTS:
         
         transcriptID = None
         
-        if dicresponseConvert["status"]!= 200:
+        if dicresponseConvert["statusCode"]== 200:
             transcriptID = dicresponseConvert["transcriptionId"]
             response = requests.get(f"https://play.ht/api/v1/articleStatus?transcriptionId={transcriptID}",headers=headers)
             

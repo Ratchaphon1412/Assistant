@@ -1,11 +1,10 @@
 import requests
 import json
 class Weather:
-    def __init__(self):
-        pass
+    def __init__(self,weatherAPI):
+        self.__weatherAPI = weatherAPI
     def weatherCurrent(self,lat,long):
-        apiKey ="f2b10a33ba4535b73fc9845ab9ffef10"
-        r =requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&lang=th&appid={apiKey}')
+        r =requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&lang=th&appid={self.__weatherAPI}')
         print(r.text)
         dic = json.loads(r.text)
         

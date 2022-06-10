@@ -1,16 +1,14 @@
 
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
-from  Knowledge.geolocation import Geolocation
-from Knowledge.weather import Weather
-from Knowledge.nlg  import Nlg
+from Knowledge.main import Knowlegde
+
 class AI:
-    def __init__(self):
+    def __init__(self,weatherAPI):
         self.speechTT = SpeechTT()
         self.textTTS = textTTS()
-        self.geoLocation = Geolocation()
-        self.weather = Weather()
-        self.nlg = Nlg()
+        self.knowLedge = Knowlegde(weatherAPI)
+
 
 
     def mainAI(self):
@@ -26,9 +24,10 @@ class AI:
                     if(text in "สวัสดี"):
                         self.textTTS.changetextTV("สวัสดีค่ะ")
                     if(text in "สภาพอากาศเป็นยังไง"):
-                        lat,long = self.geoLocation.getGeoLocation()
-                        des,temp = self.weather.weatherCurrent(lat,long)
-                        text  = self.nlg.answerWeather(des,temp)
+                       
+                        lat,long = self.knowLedge.getGeoLocation()
+                        des,temp = self.knowLedge.weatherCurrent(lat,long)
+                        text  = self.knowLedge.answerWeather(des,temp)
                         self.textTTS.changetextTV(text)
                         # test branch
             except:
