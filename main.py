@@ -1,9 +1,14 @@
 from AI.AI import AI
+import json
 
 
 
-weatherAPI ="f2b10a33ba4535b73fc9845ab9ffef10"
+
+
 
 if __name__ == '__main__':
+    with open ('key.json')as fileJson:
+        key = json.load(fileJson)
+        weatherAPI = key["APIKEY"]["weatherAPI"]
     ai = AI(weatherAPI)
     ai.mainAI()
