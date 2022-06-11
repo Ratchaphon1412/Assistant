@@ -4,10 +4,11 @@ from TextToSpeech.textToSpeech import textTTS
 from Knowledge.main import Knowlegde
 
 class AI:
-    def __init__(self,weatherAPI):
+    def __init__(self,weatherAPI,playhtHeader):
         self.speechTT = SpeechTT()
-        self.textTTS = textTTS()
+        self.textTTS = textTTS(playhtHeader)
         self.knowLedge = Knowlegde(weatherAPI)
+        
 
 
 

@@ -5,14 +5,14 @@ import json
 import os
 
 class textTTS:
-    def __init__(self):
-        pass
+    def __init__(self,playhtHeader):
+        self.playhtHeader = playhtHeader
     
     def changetextTV(self,text):
         
         headers = {
-            'Authorization':'d3157040971248cebcdc336b2e46355d',
-            'X-User-ID':'ykh4t5m4GKXmS5uMnN8heUyoltv1',
+            'Authorization':self.playhtHeader["Authorization"],
+            'X-User-ID':self.playhtHeader["X-User-ID"],
             'Content-Type' : 'application/json'
             }
         payload ={
