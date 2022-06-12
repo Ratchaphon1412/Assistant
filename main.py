@@ -7,5 +7,6 @@ if __name__ == '__main__':
         key = json.load(fileJson)
         weatherAPI = key["APIKEY"]["weatherAPI"]
         playhtHeader = key["APIKEY"]["play.htAPI"]
-    ai = AI(weatherAPI,playhtHeader)
+        witAPI=key["APIKEY"]["witAPI"]
+    ai = AI(weatherAPI,playhtHeader,witAPI)
     ai.mainAI()

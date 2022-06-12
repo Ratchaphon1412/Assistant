@@ -6,4 +6,4 @@ class Nlg:
         mergeString = ["มี"," สภาพอากาศที่คุณอยู่ มี","ณ ที่คุณอยู่ มี"]
         text = mergeString[random.randrange(0,2)] + des + " อุณหภูมิประมาณ "+temp
         return text
-        
+      
