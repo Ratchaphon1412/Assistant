@@ -69,7 +69,8 @@ class AI:
                             text = self.knowLedge.dontUnderStand()
                             self.textTTS.changetextTV(text)
                     else:
-                        pass
+                        text = self.knowLedge.noFeature()
+                        self.textTTS.changetextTV(text)
             except:
                 break
         
