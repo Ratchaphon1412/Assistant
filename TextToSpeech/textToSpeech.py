@@ -21,12 +21,27 @@ class textTTS:
             'title': 'test'
         }
         
-        language = 'th'
-        voice = gTTS(text=text, lang=language, slow=False)
-        voice.save('Voice.mp3')
-        playsound('Voice.mp3')
-        os.remove('Voice.mp3')
+                try :
+            response = requests.post("https://play.ht/api/v1/convert",data=json.dumps(payload),headers=headers)
+            dicresponseConvert = json.loads(response.text)
+            transcriptID = dicresponseConvert["transcriptionId"]
+            responseSound = requests.get("https://play.ht/api/v1/articleStatus?transcriptionId="+transcriptID,headers=headers)
+            dicresponseConvert = json.loads(responseSound.text)
+            urldownloadMP3 = dicresponseConvert["audioUrl"]
+            mp3 = requests.get(urldownloadMP3,allow_redirects=True)
+            open('Voice.wav','wb').write(mp3.content) 
+            playsound('Voice.wav')
+            os.remove('Voice.wav')
+            
+
+        except:
+            language = 'th'
+            voice = gTTS(text=text, lang=language, slow=False)
+            voice.save('Voice.wav')
+            playsound('Voice.wav')
+            os.remove('Voice.wav')
         return
+        
         
         
         
