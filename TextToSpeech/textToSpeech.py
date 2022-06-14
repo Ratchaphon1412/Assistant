@@ -22,7 +22,6 @@ class textTTS:
             'title': 'test'
         }
         
-<<<<<<< HEAD
         try :
             response =  requests.post("https://play.ht/api/v1/convert",data=json.dumps(payload),headers=headers)
             dicresponseConvert = json.loads(response.text)
@@ -43,13 +42,6 @@ class textTTS:
             voice.save('Voice.mp3')
             playsound('Voice.mp3')
             os.remove('Voice.mp3')
-=======
-        language = 'th'
-        voice = gTTS(text=text, lang=language, slow=False)
-        voice.save('Voice.mp3')
-        playsound('Voice.mp3')
-        os.remove('Voice.mp3')
->>>>>>> a2eb908c9b80180bcaa53b51d04f65ff62c87181
         return
         
         
