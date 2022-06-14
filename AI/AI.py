@@ -6,10 +6,10 @@ from Knowledge.main import Knowlegde
 from .Wit import Wit
 
 class AI:
-    def __init__(self,weatherAPI,playhtHeader,witAPI):
+    def __init__(self,weatherAPI,playhtHeader,witAPI,rapidAPI):
         self.speechTT = SpeechTT()
         self.textTTS = textTTS(playhtHeader)
-        self.knowLedge = Knowlegde(weatherAPI)
+        self.knowLedge = Knowlegde(weatherAPI,rapidAPI)
         self.wit = Wit(witAPI)
         
 
@@ -31,12 +31,24 @@ class AI:
                             if(intent == "greeting"):
                                 self.textTTS.changetextTV("สวัสดีค่ะ")
                             if(intent == "weather"):
-                            
-                                lat,long = self.knowLedge.getGeoLocation()
-                                des,temp = self.knowLedge.weatherCurrent(lat,long)
-                                text  = self.knowLedge.answerWeather(des,temp)
-                                self.textTTS.changetextTV(text)
-                                # test branch
+                                if(entities == dict()):
+                                    # when entities is empty
+                                    lat,long = self.knowLedge.getGeoLocation()
+                                    des,temp = self.knowLedge.weatherCurrent(lat,long)
+                                    text  = self.knowLedge.answerWeather(des,temp)
+                                    self.textTTS.changetextTV(text)
+                                else:
+                                    location = None
+                                    #TODO ask location weather
+                                    for dic in entities["location:location"]:
+                                        max = 0
+                                        if  dic["confidence"] >= max:
+                                            max = dic["confidence"]
+                                            location = dic["value"]
+                                    lat,long,name =self.knowLedge.getPlaceGeolocation(location)
+                                    des,temp = self.knowLedge.weatherCurrent(lat,long)
+
+                                
                         else:
                             pass
                     else:

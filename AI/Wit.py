@@ -17,5 +17,6 @@ class Wit:
         intent = dicresponse["intents"][0]["name"] 
         confidence = dicresponse["intents"][0]["confidence"] 
         entities = dicresponse["entities"]
+        
 
         return intent,confidence,entities
