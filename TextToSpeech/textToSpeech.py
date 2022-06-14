@@ -17,7 +17,7 @@ class textTTS:
             }
         payload ={
             'voice':'th-TH-NiwatNeural',
-            'content':text,
+            'content':[text],
             'title': 'test'
         }
         
@@ -29,11 +29,12 @@ class textTTS:
         
         transcriptID = None
         
-        if dicresponseConvert["statusCode"]== 200:
+        if dicresponseConvert["status"]== 'transcriping':
             transcriptID = dicresponseConvert["transcriptionId"]
-            response = requests.get(f"https://play.ht/api/v1/articleStatus?transcriptionId={transcriptID}",headers=headers)
             
-            dicresponseConvert = json.loads(response.text)
+            responseSound = requests.get("https://play.ht/api/v1/articleStatus?transcriptionId="+transcriptID,headers=headers)
+          
+            dicresponseConvert = json.loads(responseSound.text)
             if dicresponseConvert["converted"]:
                 urldownloadMP3 = dicresponseConvert["audioUrl"]
                 mp3 = requests.get(urldownloadMP3,allow_redirects=True)
