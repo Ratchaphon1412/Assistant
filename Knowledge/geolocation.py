@@ -30,8 +30,8 @@ class  Geolocation:
         if  dicresponse["status"] == "OK":
             lat = dicresponse["results"][0]["geometry"]["location"]["lat"]
             long = dicresponse["results"][0]["geometry"]["location"]["lat"]
-            name = dicresponse["results"][0]["formatted_address"]
-            return lat,long,name
+            #name = dicresponse["results"][0]["formatted_address"]
+            return lat,long
         else:
             return 
 

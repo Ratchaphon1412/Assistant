@@ -18,9 +18,7 @@ class AI:
     def mainAI(self):
 
         while(True):
-            
             try:
-                
                 audio,recognition = self.speechTT.startListen()
                 text = self.speechTT.changevoiceTT(audio,recognition)
                 print(text)
@@ -38,24 +36,40 @@ class AI:
                                     text  = self.knowLedge.answerWeather(des,temp)
                                     self.textTTS.changetextTV(text)
                                 else:
+                                    entitiesKey = entities.keys()
                                     location = None
-                                    #TODO ask location weather
-                                    for dic in entities["location:location"]:
-                                        max = 0
-                                        if  dic["confidence"] >= max:
-                                            max = dic["confidence"]
-                                            location = dic["value"]
-                                    lat,long,name =self.knowLedge.getPlaceGeolocation(location)
-                                    des,temp = self.knowLedge.weatherCurrent(lat,long)
+                                    # *time not use now 
+                                    time = None
+                                    for key in list(entitiesKey):
+                                        if(key == "location:location"):
+                                            for listinlocation in entities["location:location"]:
+                                                max = 0
+                                                if  listinlocation["confidence"] >= max:
+                                                    max = listinlocation["confidence"]
+                                                    location = listinlocation["value"]
+                                                    
+                                        if(key == "time:time"):
+                                            for listintime in entities["time:time"]:
+                                                max = 0 
+                                                if listintime["confidence"]>= max:
+                                                    max = listintime["confidence"]
+                                                    time = listintime["value"]
+                                    if location != None:
+                                        lat,long = self.knowLedge.getPlaceGeolocation(location)
+                                        des,temp = self.knowLedge.weatherCurrent(lat,long)
+                                        text = self.knowLedge.answerPlaceWeather(des,temp,location)
+                                    else:
+                                        lat,long = self.knowLedge.getGeoLocation()
+                                        des,temp = self.knowLedge.weatherCurrent(lat,long)
+                                        text = self.knowLedge.answerWeather(des,temp)
+                                    
+                                    self.textTTS.changetextTV(text)
 
-                                
                         else:
-                            pass
+                            text = self.knowLedge.dontUnderStand()
+                            self.textTTS.changetextTV(text)
                     else:
                         pass
-        
-
-
             except:
                 break
         
