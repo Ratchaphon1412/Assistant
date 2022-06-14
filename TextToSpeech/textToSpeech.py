@@ -32,7 +32,7 @@ class textTTS:
             open('Voice.wav','wb').write(mp3.content) 
             playsound('Voice.wav')
             os.remove('Voice.wav')
-            return
+            
 
         except:
             language = 'th'
@@ -40,7 +40,7 @@ class textTTS:
             voice.save('Voice.wav')
             playsound('Voice.wav')
             os.remove('Voice.wav')
-            return
+        return
         
         
         
