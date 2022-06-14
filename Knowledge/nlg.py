@@ -31,6 +31,6 @@ class Nlg:
         speech = "ขอโทษนะครับ ผมไม่ค่อยเข่้าใจ"
         return speech 
     def noFeature(self):
-        speech = "ขอโทษดัวยครับ พอดียังไม่ฟังชันต์นี้ครับ"
+        speech = "ขอโทษดัวยครับ พอดียังไม่มีฟังก์ชันนี้ครับ"
         return speech
 
