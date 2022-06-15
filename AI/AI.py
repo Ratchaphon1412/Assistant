@@ -41,9 +41,10 @@ class AI:
             except:
                 break
     
-    def checkConvertPlayht(check):
-        pass
-    
+    def checkConvertPlayht(self,check):
+        if check == False:
+            self.textTTS.problemPlayht()
+        return
                 
 
 
