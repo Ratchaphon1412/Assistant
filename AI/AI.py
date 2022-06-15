@@ -42,7 +42,7 @@ class AI:
                 break
     
     def checkConvertPlayht(self,check):
-        if check == False:
+        if check[1] == False:
             self.textTTS.problemPlayht()
         return
                 
