@@ -9,7 +9,7 @@ class Weather:
         dic = json.loads(r.text)
         
         description = dic["weather"][0]["description"]
-        temp = str("{:.2f}".format(dic["main"]["feels_like"]- 273.15))
+        temp = str("{:.2f}".format(dic["main"]["temp"]- 273.15))
         
         return description,temp
 

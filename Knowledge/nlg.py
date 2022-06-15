@@ -27,10 +27,3 @@ class Nlg:
         print(speech)
         return speech
 
-    def dontUnderStand(self):
-        speech = "ขอโทษนะครับ ผมไม่ค่อยเข่้าใจ"
-        return speech 
-    def noFeature(self):
-        speech = "ขอโทษด้วยครับ พอดียังไม่มีฟังชั่นนี้ครับ"
-        return speech
-

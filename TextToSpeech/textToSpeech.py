@@ -1,5 +1,6 @@
 from playsound import playsound
 from gtts import gTTS
+import asyncio
 import requests
 import json
 import os
@@ -9,7 +10,7 @@ class textTTS:
     def __init__(self,playhtHeader):
         self.playhtHeader = playhtHeader
     
-    def changetextTV(self,text):
+    async def changetextTV(self,text):
         
         headers = {
             'Authorization':self.playhtHeader["Authorization"],
@@ -22,28 +23,43 @@ class textTTS:
             'title': 'test'
         }
         
-        try :
-            response =  requests.post("https://play.ht/api/v1/convert",data=json.dumps(payload),headers=headers)
+        checkConvert = False
+        count = 0
+        while count < 10:
+            response =  requests.post("https://play.ht/api/v1/convert",data=json.dumps(payload),headers=headers,allow_redirects=True)
             dicresponseConvert = json.loads(response.text)
             transcriptID = dicresponseConvert["transcriptionId"]
-            responseSound =  requests.get("https://play.ht/api/v1/articleStatus?transcriptionId="+transcriptID,headers=headers)
+            responseSound =   requests.get("https://play.ht/api/v1/articleStatus?transcriptionId="+transcriptID,headers=headers,allow_redirects=True)
             dicresponseConvert = json.loads(responseSound.text)
-            urldownloadMP3 = dicresponseConvert["audioUrl"]
-            mp3 =  requests.get(urldownloadMP3,allow_redirects=True)
-    
-            open('Voice.mp3','wb').write(mp3.content)
-            playsound('Voice.mp3')
-            os.remove('Voice.mp3')
+            print(responseSound.text)
+            if(dicresponseConvert["converted"] == True):
+                urldownloadMP3 = dicresponseConvert["audioUrl"]
+                mp3 =   requests.get(urldownloadMP3,allow_redirects=True)
+                open('./Sound/Voice.mp3','wb').write(mp3.content)
+                playsound('./Sound/Voice.mp3')
+                os.remove('./Sound/Voice.mp3')
+                checkConvert = True
+                break
+            count += 1
             
-
-        except:
-            language = 'th'
-            voice = gTTS(text=text, lang=language, slow=False)
-            voice.save('Voice.mp3')
-            playsound('Voice.mp3')
-            os.remove('Voice.mp3')
-        return
+        return checkConvert
         
+        
+
+    
+    async def speechPleaseWait(self):
+        return playsound("./Sound/finddata.mp3")
+
+    async def main(self,text):
+        return await asyncio.gather(self.speechPleaseWait(),self.changetextTV(text))
+
+    def dontunderstand(self):
+        return playsound("./Sound/don'tunderstand.mp3")
+    def nofeature(self):
+        return playsound("./Sound/nofeature.mp3")
+
+
+
         
         
         
