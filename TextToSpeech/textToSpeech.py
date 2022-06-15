@@ -57,7 +57,8 @@ class textTTS:
         return playsound("./Sound/don'tunderstand.mp3")
     def nofeature(self):
         return playsound("./Sound/nofeature.mp3")
-
+    def problemPlayht(self):
+        return playsound("./Sound/problem.mp3")
 
 
         
