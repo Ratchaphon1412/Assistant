@@ -1,5 +1,3 @@
-
-from html import entities
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
 from Knowledge.main import Knowlegde
@@ -12,9 +10,6 @@ class AI:
         self.textTTS = textTTS(playhtHeader)
         self.knowLedge = Knowlegde(weatherAPI,rapidAPI)
         self.wit = Wit(witAPI)
-        
-
-
 
     def mainAI(self):
 
@@ -29,7 +24,7 @@ class AI:
                     if(intent != None):
                         if(confidence >= 0.85):
                             if(intent == "greeting"):
-                                    checkConvertPlayht = asyncio.run(self.textTTS.changetextTV("สวัสดีครับ"))
+                                asyncio.run(self.textTTS.changetextTV("สวัสดีครับ"))
                             if(intent == "weather"):
                                text = self.knowLedge.weather(entities)
                                checkConvertPlayht = asyncio.run(self.textTTS.main(text))

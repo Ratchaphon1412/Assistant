@@ -1,4 +1,3 @@
-from cgitb import text
 from .geolocation import Geolocation
 from .nlg import Nlg
 from .weather import Weather
