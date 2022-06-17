@@ -9,5 +9,6 @@ if __name__ == '__main__':
         playhtHeader = key["APIKEY"]["play.htAPI"]
         witAPI = key["APIKEY"]["witAPI"]
         rapidAPI = key["APIKEY"]["rapidAPI"]
-    ai = AI(weatherAPI,playhtHeader,witAPI,rapidAPI)
+        googleAPI = key["APIKEY"]["googleAPI"]
+    ai = AI(weatherAPI,playhtHeader,witAPI,rapidAPI,googleAPI)
     ai.mainAI()

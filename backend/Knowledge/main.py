@@ -1,12 +1,14 @@
 from .geolocation import Geolocation
 from .nlg import Nlg
 from .weather import Weather
+from .knowledgeGoogle import KnowledgeGoogle
 
-class Knowlegde(Geolocation,Nlg,Weather):
-    def __init__(self,weatherAPI,rapidAPI):
+class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
+    def __init__(self,weatherAPI,rapidAPI,googleAPI):
         Geolocation.__init__(self,rapidAPI)
         Nlg.__init__(self)
         Weather.__init__(self,weatherAPI)
+        KnowledgeGoogle.__init__(self,googleAPI)
 
     def weather(self,entities):
         text = None

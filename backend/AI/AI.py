@@ -5,10 +5,10 @@ from .Wit import Wit
 import asyncio
 
 class AI:
-    def __init__(self,weatherAPI,playhtHeader,witAPI,rapidAPI):
+    def __init__(self,weatherAPI,playhtHeader,witAPI,rapidAPI,googleAPI):
         self.speechTT = SpeechTT()
         self.textTTS = textTTS(playhtHeader)
-        self.knowLedge = Knowlegde(weatherAPI,rapidAPI)
+        self.knowLedge = Knowlegde(weatherAPI,rapidAPI,googleAPI)
         self.wit = Wit(witAPI)
 
     def mainAI(self):
