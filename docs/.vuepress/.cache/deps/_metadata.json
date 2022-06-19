@@ -1,0 +1,74 @@
+{
+  "hash": "30d38905",
+  "browserHash": "457aef37",
+  "optimized": {
+    "@vue/devtools-api": {
+      "src": "../../../node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "a4bbb214",
+      "needsInterop": false
+    },
+    "@vuepress/shared": {
+      "src": "../../../node_modules/@vuepress/shared/dist/index.js",
+      "file": "@vuepress_shared.js",
+      "fileHash": "c9829bb5",
+      "needsInterop": false
+    },
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "ef30bf3b",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "file": "vue-router.js",
+      "fileHash": "9afce566",
+      "needsInterop": false
+    },
+    "chart.js/auto": {
+      "src": "../../../node_modules/chart.js/auto/auto.esm.js",
+      "file": "chart_js_auto.js",
+      "fileHash": "d1484436",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "13b1d90c",
+      "needsInterop": false
+    },
+    "flowchart.js": {
+      "src": "../../../node_modules/flowchart.js/index.js",
+      "file": "flowchart_js.js",
+      "fileHash": "4a0ed1d3",
+      "needsInterop": true
+    },
+    "mermaid": {
+      "src": "../../../node_modules/mermaid/dist/mermaid.esm.min.mjs",
+      "file": "mermaid.js",
+      "fileHash": "7a01bcb4",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "afc31ca1",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-ABPCGRCE": {
+      "file": "chunk-ABPCGRCE.js"
+    },
+    "chunk-AVJPYEAY": {
+      "file": "chunk-AVJPYEAY.js"
+    },
+    "chunk-YXFRTDHY": {
+      "file": "chunk-YXFRTDHY.js"
+    },
+    "chunk-A6STNUJK": {
+      "file": "chunk-A6STNUJK.js"
+    }
+  }
+}
