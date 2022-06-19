@@ -1,12 +1,1 @@
-AssistantEnv/
-__pycache__/
-key.json
-TextToSpeech/
 .vscode
-*.pyc
-
-./docs/node_modules
-./docs/.vuepress/.cache/
-./docs/.vuepress/.temp/
-./docs/.vuepress/dist/
-./docs/.github
