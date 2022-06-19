@@ -1,48 +1,51 @@
 ---
 home: true
-layout: Blog
 icon: home
-title: Blog Home
+title: Project home
+permalink: /en
 heroImage: /logo.svg
-heroText: the name of your blog
-tagline: You can put your slogan here
-heroFullScreen: true
-projects:
-  - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
+heroText: E.D.I.T.H Assistants
+tagline: You can place the description of the project here.
+actions:
+  - text: How to Use 💡
+    link: /th/Guide/
+    type: primary
 
-  - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
+  - text: Github
+    link: https://github.com/Ratchaphon1412/Assistant
 
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
+features:
+  - title: Weather
+    icon: fa-solid fa-cloud-moon-rain
+    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
+    link: https://vuepress-theme-hope.github.io/v2/guide/markdown/
 
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
+  - title: Slide page
+    icon: slides
+    details: Adding slide pages to display things you like
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides
 
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
+  - title: Layout enhancement
+    icon: layout
+    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
+    link: https://vuepress-theme-hope.github.io/v2/guide/layout/
 
-  - icon: /logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
+  - title: Pageviews and comments
+    icon: comment
+    details: Start pageview statistics and comment support with Waline
+    link: https://vuepress-theme-hope.github.io/v2/guide/feature/comment.html
 
-footer: customize your footer text
+  - title: Article information
+    icon: info
+    details: Add author, writing date, reading time, word count and other information to your article
+    link: https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html
+
+copyright: false
+footer: MIT Licensed | Copyright © 2019-present Mr.Hope
 ---
 
-This is a blog home page demo.
+This is an example of a project homepage. You can place your main content here.
 
-To use this layout, you should set both `layout: Blog` and `home: true` in the page front matter.
+To use this layout, you need to set `home: true` in the page front matter.
 
-For related configuration docs, please see [blog homepage](https://vuepress-theme-hope.github.io/v2/guide/blog/home/).
+For related descriptions of configuration items, please see [Project HomePage Layout Config](https://vuepress-theme-hope.github.io/v2/guide/layout/home/).
