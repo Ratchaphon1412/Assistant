@@ -1,5 +1,4 @@
 AssistantEnv/
-.gitignore
 __pycache__/
 key.json
 TextToSpeech/
