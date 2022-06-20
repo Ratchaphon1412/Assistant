@@ -58,6 +58,10 @@ export default hopeTheme({
       presentation: {
         plugins: ["highlight", "math", "search", "notes", "zoom"],
       },
+      align: true,
+      container: true,
+      tasklist: true,
+      flowchart: true,
     },
   },
 });

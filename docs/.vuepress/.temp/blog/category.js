@@ -1,4 +1,4 @@
-export const categoryMap = {"category":{"/":{"path":"/category/","map":{}},"/en":{"path":"/encategory/","map":{}},"/th":{"path":"/thcategory/","map":{}}},"tag":{"/":{"path":"/tag/","map":{}},"/en":{"path":"/entag/","map":{}},"/th":{"path":"/thtag/","map":{}}}}
+export const categoryMap = {"category":{"/":{"path":"/category/","map":{"Guide":{"path":"/category/guide/","keys":["v-0e0ab8a0"]}}},"/en":{"path":"/encategory/","map":{}},"/th":{"path":"/thcategory/","map":{}}},"tag":{"/":{"path":"/tag/","map":{"encryption":{"path":"/tag/encryption/","keys":["v-0e0ab8a0"]}}},"/en":{"path":"/entag/","map":{}},"/th":{"path":"/thtag/","map":{}}}}
 
 if (import.meta.webpackHot) {
   import.meta.webpackHot.accept()
