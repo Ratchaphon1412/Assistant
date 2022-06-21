@@ -10,14 +10,14 @@ import { useScrollPromise } from "@theme-hope/composables";
 import { injectDarkMode, setupDarkMode } from "@theme-hope/module/outlook/composables";
 import { setupSidebarItems } from "@theme-hope/module/sidebar/composables";
 
-import "/Users/ratchaphonhinsui/Desktop/Assistant /docs/node_modules/vuepress-theme-hope/lib/client/styles/index.scss";
+import "/Users/ratchaphonhinsui/Desktop/Assistant/docs/node_modules/vuepress-theme-hope/lib/client/styles/index.scss";
 
 
 import BloggerInfo from "@theme-hope/module/blog/components/BloggerInfo";
 import BlogHome from "@theme-hope/module/blog/components/BlogHome";
 import BlogPage from "@theme-hope/module/blog/components/BlogPage";
 import { setupBlog } from "@theme-hope/module/blog/composables";
-import "/Users/ratchaphonhinsui/Desktop/Assistant /docs/node_modules/vuepress-theme-hope/lib/client/module/blog/styles/layout.scss";
+import "/Users/ratchaphonhinsui/Desktop/Assistant/docs/node_modules/vuepress-theme-hope/lib/client/module/blog/styles/layout.scss";
 
 
 export default defineClientConfig({
