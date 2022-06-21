@@ -4,3 +4,4 @@ PyObjC
 gTTS
 geopy
 geocoder
+pip-autoremove

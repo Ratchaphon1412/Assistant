@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
 from Knowledge.main import Knowlegde
@@ -13,7 +12,6 @@ class AI:
         self.wit = Wit(witAPI)
 
     def mainAI(self):
-
         while(True):
             try:
                 audio,recognition = self.speechTT.startListen()
