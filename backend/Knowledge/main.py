@@ -46,9 +46,19 @@ class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
                 text = self.answerWeather(des,temp)
         return text 
 
-    def findsomething(self,Text):
-        text = None
-        self.findknowledgeGoogle(text)
-
+    def findsomething(self,entities):
+        data = None
+        for key in list(entities):
+            if key == 'data:data':
+                max = 0
+                for listData in entities['data:data']:
+                    if listData['confidence'] >= max:
+                        max = listData['confidence']
+                        data = listData['value']
+        listText = self.findknowledgeGoogle(data)
+        
+        text = self.ansQuestion(listText)
+    
         return text
+
                 

@@ -1,4 +1,5 @@
 from fileinput import close
+from heapq import merge
 import random
 class Nlg:
     def __init__(self):
@@ -26,4 +27,18 @@ class Nlg:
         
         print(speech)
         return speech
+    def ansQuestion(self,listText):
+        
+        start = ['ข้อมูลที่ผมพบทั้งหมด จำนวน ','จากข้อมูลที่พบทั้ง ','ข้อมูลที่หาได้ ']
+        text = start[random.randrange(0,2)]+ str(len(listText)) + ' การค้นหา '
+        print(text)
+        merge = ""
+        for i in range(len(listText)):
+            
+            merge += "ข้อมูลชุดที่ " + str(i+1) +" "+ str(listText[i])
+        print(text + merge)
+        return text + merge
+        
+        
+
 
