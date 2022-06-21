@@ -20,9 +20,9 @@ class Nlg:
         speechtemp = [""," อุณหภูมิประมาณ " + temp + "องศา"]
         
         if "ฝน" in des:
-            speech = mergeString[random.randrange(0,2)] + text  + desMerge[random.randrange(0,1)] + des + speechtemp[random.randrange(0,1)] + "อย่าลืมพกร่มไปด้วยนะครับ"
+            speech = mergeString[random.randrange(0,2)] + text  + desMerge[random.randrange(0,1)] + des + speechtemp[random.randrange(0,2)] + "อย่าลืมพกร่มไปด้วยนะครับ"
         else:
-            speech = mergeString[random.randrange(0,2)] + text  + desMerge[random.randrange(0,1)] + des + speechtemp[random.randrange(0,1)] + "ครับ"
+            speech = mergeString[random.randrange(0,2)] + text  + desMerge[random.randrange(0,1)] + des + speechtemp[random.randrange(0,2)] + "ครับ"
         
         print(speech)
         return speech

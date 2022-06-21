@@ -1,0 +1,6 @@
+SpeechRecognition
+playsound
+PyObjC
+gTTS
+geopy
+geocoder

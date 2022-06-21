@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from SpeechToText.speechToText import SpeechTT
 from TextToSpeech.textToSpeech import textTTS
 from Knowledge.main import Knowlegde

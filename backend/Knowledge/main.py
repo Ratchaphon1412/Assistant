@@ -44,5 +44,11 @@ class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
                 lat,long = self.getGeoLocation()
                 des,temp = self.weatherCurrent(lat,long)
                 text = self.answerWeather(des,temp)
-        return text  
+        return text 
+
+    def findsomething(self,Text):
+        text = None
+        self.findknowledgeGoogle(text)
+
+        return text
                 
