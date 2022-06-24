@@ -27,18 +27,19 @@ class Nlg:
         
         print(speech)
         return speech
-    def ansQuestion(self,listText):
-        
+    def ansQuestion(self,listText,data):
+        confirm = "ผลการค้นหาคำว่า "+  data + " " 
         start = ['ข้อมูลที่ผมพบทั้งหมด จำนวน ','จากข้อมูลที่พบทั้ง ','ข้อมูลที่หาได้ ']
         text = start[random.randrange(0,2)]+ str(len(listText)) + ' การค้นหา '
         print(text)
         merge = ""
         for i in range(len(listText)):
-            
-            merge += "ข้อมูลชุดที่ " + str(i+1) +" "+ str(listText[i])
-        print(text + merge)
-        return text + merge
+            merge += " ข้อมูลชุดที่ " + str(i+1) +" "+ str(listText[i])
+        print(confirm + text + merge)
+        return confirm + text + merge
         
+        
+
         
 
 

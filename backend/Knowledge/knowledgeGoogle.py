@@ -16,14 +16,19 @@ class KnowledgeGoogle:
         print(response.text)
         articleList = []
         listData = json.loads(response.text)
-        if (len(listData['itemListElement']) != 0):
-            for diclist in listData['itemListElement']:
-                if('result' in diclist):
-                    if('detailedDescription' in diclist['result']):
-                        if('articleBody'in diclist['result']['detailedDescription']):
-                            articleList.append(diclist['result']['detailedDescription']['articleBody'])
-        
-        return articleList
+        try:
+            if (len(listData['itemListElement']) != 0):
+                for diclist in listData['itemListElement']:
+                    if('result' in diclist):
+                        if('detailedDescription' in diclist['result']):
+                            if('articleBody'in diclist['result']['detailedDescription']):
+                                articleList.append(diclist['result']['detailedDescription']['articleBody'])
+            
+            print(articleList)
+            return articleList if (articleList != list()) else None
+        except:
+            return None
+
 
 
                 

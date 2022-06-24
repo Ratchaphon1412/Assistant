@@ -48,6 +48,7 @@ class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
 
     def findsomething(self,entities):
         data = None
+        # get data from list
         for key in list(entities):
             if key == 'data:data':
                 max = 0
@@ -56,9 +57,8 @@ class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
                         max = listData['confidence']
                         data = listData['value']
         listText = self.findknowledgeGoogle(data)
-        
-        text = self.ansQuestion(listText)
-    
-        return text
+        #check data and return
+        return self.ansQuestion(listText,data) if (listText != list()) else None 
+
 
                 

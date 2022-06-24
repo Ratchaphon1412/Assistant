@@ -28,11 +28,15 @@ class AI:
                                text = self.knowLedge.weather(entities)
                                checkConvertPlayht = asyncio.run(self.textTTS.main(text))
                                self.checkConvertPlayht(checkConvertPlayht)
-                            if(intent == "search"):
-                                text = self.knowLedge.findsomething(entities)
-                                checkConvertPlayht = asyncio.run(self.textTTS.main(text))
-                                self.checkConvertPlayht(checkConvertPlayht)
 
+                            if(intent == "search"):
+
+                                text = self.knowLedge.findsomething(entities)
+                                if (text != None):
+                                    checkConvertPlayht = asyncio.run(self.textTTS.main(text))
+                                    self.checkConvertPlayht(checkConvertPlayht)
+                                else:
+                                    self.textTTS.notfound()
                         else:
                             self.textTTS.dontunderstand()
                     else:
