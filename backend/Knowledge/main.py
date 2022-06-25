@@ -1,13 +1,14 @@
 from .geolocation import Geolocation
 from .nlg import Nlg
 from .weather import Weather
+from .knowledgeGoogle import KnowledgeGoogle
 
-class Knowlegde(Geolocation,Nlg,Weather):
+class Knowlegde(Geolocation,Nlg,Weather,KnowledgeGoogle):
     def __init__(self,weatherAPI,rapidAPI,googleAPI):
         Geolocation.__init__(self,rapidAPI)
         Nlg.__init__(self)
         Weather.__init__(self,weatherAPI)
-    
+        KnowledgeGoogle.__init__(self,googleAPI)
 
     def weather(self,entities):
         text = None
@@ -47,7 +48,6 @@ class Knowlegde(Geolocation,Nlg,Weather):
 
     def findsomething(self,entities):
         data = None
-        # get data from list
         for key in list(entities):
             if key == 'data:data':
                 max = 0
@@ -56,8 +56,9 @@ class Knowlegde(Geolocation,Nlg,Weather):
                         max = listData['confidence']
                         data = listData['value']
         listText = self.findknowledgeGoogle(data)
-        #check data and return
-        return self.ansQuestion(listText,data) if (listText != list()) else None 
-
+        
+        text = self.ansQuestion(listText)
+    
+        return text
 
                 

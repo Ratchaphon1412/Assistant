@@ -5,7 +5,7 @@ import json
 class  Geolocation:
     def __init__(self,rapidAPI):
         self.rapidAPI = rapidAPI
-    def getGeoLocation(self): 
+    def getGeoLocation(self):
         Nomi_locator = Nominatim(user_agent="My App")
         my_location= geocoder.ip('me')
 
@@ -34,6 +34,9 @@ class  Geolocation:
             return lat,long
         else:
             return 
+
+        
+
 
 
 

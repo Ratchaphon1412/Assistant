@@ -7,7 +7,7 @@ class SpeechTT:
     def startListen(self):
         # obtain audio from the microphone
         r = sr.Recognizer()
-        r.energy_threshold = 5000
+        r.energy_threshold = 4000
         with sr.Microphone() as microphone:
             print("Say something!")
             audio = r.listen(microphone)
@@ -18,7 +18,7 @@ class SpeechTT:
         text = None
         try:
             
-            text = recognizer.recognize_google(audio, language = "th-TH")
+            text = recognizer.recognize_google(audio,language = "th-TH")
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")
         except sr.RequestError as e:
