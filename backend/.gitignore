@@ -1,5 +1,4 @@
 AssistantEnv/
 __pycache__/
 key.json
-TextToSpeech/
 *.pyc
