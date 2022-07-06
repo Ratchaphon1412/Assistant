@@ -18,10 +18,13 @@ class CoreLocationMacOS(NSObject):
     def locationManager_didUpdateToLocation_fromLocation_(self, manager, newloc, oldloc):
         if oldloc is not None:
             print("OLD:", oldloc.description())
+            self.lat = oldloc.coordinate().latitude
+            self.long = oldloc.coordinate().longtitude
         else:
             print("OLD: <None>")
-        self.lat = newloc.coordinate().latitude
-        self.long = newloc.coordinate().longitude
+            self.lat = newloc.coordinate().latitude
+            self.long = newloc.coordinate().longitude
+            print(self.lat, self.long)
 
     def locationManager_didFailWithError_(self, manager, err):
         print("ERR:", err.description())

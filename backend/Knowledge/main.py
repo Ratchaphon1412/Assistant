@@ -6,11 +6,11 @@ from .coreLocationMacOS import CoreLocationMacOS
 
 
 class Knowlegde(Geolocation, Nlg, Weather, KnowledgeGoogle):
-    def __init__(self, weatherAPI, rapidAPI, googleAPI):
+    def __init__(self, weatherAPI, rapidAPI, googleAPI, googleMapAPI):
         Geolocation.__init__(self, rapidAPI)
         Nlg.__init__(self)
         Weather.__init__(self, weatherAPI)
-        KnowledgeGoogle.__init__(self, googleAPI)
+        KnowledgeGoogle.__init__(self, googleAPI, googleMapAPI)
         self.CORE_LOCATION = CoreLocationMacOS.alloc().init()
 
     def weather(self, entities):
@@ -75,3 +75,14 @@ class Knowlegde(Geolocation, Nlg, Weather, KnowledgeGoogle):
         text = self.ansQuestion(listText)
 
         return text
+
+    def findRestaurantNearMe(self):
+        lat, long = self.CORE_LOCATION.getCoreLocationMac()
+        if (lat == None and long == None):
+            return None
+        else:
+            list_restaurant = self.nearPlaceRestaurant(lat, long)
+            print(list_restaurant)
+            text = self.ansRestaurant(list_restaurant)
+
+            return text

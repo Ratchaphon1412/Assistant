@@ -24,7 +24,7 @@ class textTTS:
         }
         response = requests.post(
             endpoint+'convert', headers=headers, json=payloads)
-        await asyncio.sleep(5)
+        await asyncio.sleep(10)
         print(response.text)
         dic_response = json.loads(response.text)
         print(dic_response['status'])
