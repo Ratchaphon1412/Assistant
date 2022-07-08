@@ -57,7 +57,7 @@ class Nlg:
             str(len(list_restaurant)) + " ร้าน "
 
         for i in range(len(list_restaurant)):
-            text += "ร้านที่ " + str(i+1) + \
+            text += "ร้านที่ " + str(i+1) + " " +\
                 list_restaurant[i]['name'] + "  "
         text += "ต้องการไปร้านไหนไหมครับ"
 
