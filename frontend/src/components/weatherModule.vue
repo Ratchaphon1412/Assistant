@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-center row g-0">
       <div class="col-md-6 weatherDetails">
         <div class="d-flex flex-row">
-          <div class="align-self-center ps-2">
+          <div class="align-self-center">
             <i class="bi bi-cloud-drizzle weatherIcon"></i>
           </div>
           <div class="card-body weatherCard">
