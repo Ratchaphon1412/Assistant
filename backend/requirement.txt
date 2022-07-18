@@ -5,3 +5,5 @@ gTTS
 geopy
 geocoder
 pip-autoremove
+Flask
+flask-socketio
